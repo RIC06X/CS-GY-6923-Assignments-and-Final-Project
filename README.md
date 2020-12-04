@@ -2,13 +2,13 @@
 
 ## Extention 1 SVM with Soft margein
 
-Sometimes due to noises, data is not linearly separable. And at this situation, soft margin can increase the distance between the support vectors from margin and therefore can tolerate more noise and make the model more robust. 
+In real world, some data is not linearly separable. And at this situation, soft margin can increase the distance between the margins and therefore can fit more data, tolerate more noise and make the model more robust. 
 
 The formula is :
 
 `y (i)(w Tx (i)+ w 0) ≥1− ξ(i)  ξ>.0`
 
-We use `ξ` to describe how far x(i) away from the margin
+We use `ξ` to describe how far x(i) away from the margin. We use varibale `C` to represent `ξ` in the code
 
 ### Scikit-learn implementation:
 
@@ -56,7 +56,7 @@ Soft margin implementation |scikit-learn digits | 90.28%
 
 ## Extension 2 Nerual Network with Softmax Output Layer
 
-
+People usually use `sigmoid` activation on multi-lable classification problem, the outpus are not mutually exclusive. The `sigmoid` function gives the probablity for all of the classes. The results can have high probability for all of the classes or none of them. However, when dealing with mutually exclusive outputs, or need to find out the only right answers type of questions, `softmax` function can be a better choice. The `softmax` function enforces the sum of the probabilities of output classes equal to one, and increased the probability of a particular class. In this homework, we are asked to find out the only one correct digit from 10 different digits, therefore we need to increase one particular class's probability, and `softmax` function can be a good choice here.
 
 ## Tensorflow Implementation
 ```python
